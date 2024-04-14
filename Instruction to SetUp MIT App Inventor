@@ -1,0 +1,35 @@
+Open MIT App Inventor (https://appinventor.mit.edu/) and create a new project.
+Drag and drop two buttons (for manual watering on/off) and a Bluetooth client component onto the designer canvas.
+Set the properties of the Bluetooth client component to your Bluetooth module's address.
+Name the buttons appropriately, such as "Manual Watering On" and "Manual Watering Off".
+
+
+Use the following blocks to control the Arduino
+
+// Initialize Bluetooth Client
+when Screen.Initialize
+  BluetoothClient1.Address = "YOUR_BLUETOOTH_MODULE_ADDRESS"
+  BluetoothClient1.Port = 1 // This is usually 1 for most Bluetooth modules
+  BluetoothClient1.Connect(UUID)
+
+// Button for Manual Watering On
+when ButtonManualOn.Click
+  BluetoothClient1.SendMessage("MANUAL_ON")
+
+// Button for Manual Watering Off
+when ButtonManualOff.Click
+  BluetoothClient1.SendMessage("MANUAL_OFF")
+
+// Handling Bluetooth connection status
+when BluetoothClient1.Connected
+  // Display a message or change UI to indicate connection
+  
+when BluetoothClient1.Disconnected
+  // Display a message or change UI to indicate disconnection
+
+// Handling Bluetooth communication errors
+when BluetoothClient1.ErrorOccurred
+  // Display error message or handle the error as needed
+
+
+Replace "YOUR_BLUETOOTH_MODULE_ADDRESS" with the Bluetooth module's MAC address. Ensure that the UUID used for connection is set appropriately based on your Bluetooth module's specifications.
