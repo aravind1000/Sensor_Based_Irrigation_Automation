@@ -1,16 +1,16 @@
 #include <SoftwareSerial.h>
 
 // Pin Definitions
-const int moistureSensorPin = A0; // Analog pin for moisture sensor
-const int motorPin = 9; // Digital pin for controlling the water pump motor
-const int manualWateringButtonPin = 2; // Digital pin for manual watering button
+const int moistureSensorPin = A0; 
+const int motorPin = 9; 
+const int manualWateringButtonPin = 2; 
 
 // Thresholds and settings
-const int moistureThreshold = 700; // Moisture threshold for automatic watering
-const unsigned long wateringDuration = 5000; // Duration of watering in milliseconds (5 seconds)
-const int bluetoothTxPin = 3; // Bluetooth TX pin
-const int bluetoothRxPin = 4; // Bluetooth RX pin
-const char endMarker = '\n'; // End marker for incoming Bluetooth messages
+const int moistureThreshold = 700; 
+const unsigned long wateringDuration = 5000; 
+const int bluetoothTxPin = 3; 
+const int bluetoothRxPin = 4; 
+const char endMarker = '\n'; 
 
 // Variables
 bool isManualWatering = false;
@@ -51,7 +51,7 @@ void loop() {
   // Check for incoming Bluetooth commands
   while (bluetoothSerial.available() > 0) {
     char receivedChar = bluetoothSerial.read();
-    if (receivedChar == 'W') { // Watering command
+    if (receivedChar == 'W') { 
       waterPlants();
     }
   }
@@ -61,8 +61,7 @@ void waterPlants() {
   // Turn on water pump motor
   digitalWrite(motorPin, HIGH);
   Serial.println("Watering...");
-  delay(wateringDuration); // Watering duration
-  // Turn off water pump motor
+  delay(wateringDuration); 
   digitalWrite(motorPin, LOW);
 }
 
