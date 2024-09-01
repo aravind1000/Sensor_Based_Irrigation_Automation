@@ -28,7 +28,8 @@ This project is an effective water management system using Arduino, which monito
 
 1. Clone this repository:
    ```sh
-   git clone https://github.com/aravind1000/Effective_Water_Management_System.git
-   cd Effective_Water_Management_System
+   git clone https://github.com/aravind1000/Sensor_Based_Irrigation_Automation.git
+   
+   cd Sensor_Based_Irrigation_Automation
 
 2. Follow the instructions uploaded in this project
