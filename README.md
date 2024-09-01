@@ -1,4 +1,4 @@
-# Effective Water Management System
+# Sensor Based Irrigation Automation
 
 This project is an effective water management system using Arduino, which monitors soil moisture and waters plants when the moisture level drops below a certain threshold. It also supports manual watering via a button or Bluetooth commands.
 
